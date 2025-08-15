@@ -14,10 +14,9 @@ export default function Home() {
 
   const certifications = [
     {
-      category: "Frontend Development",
+      category: "Spring Framework",
       certificates: [
-        { name: "TypeScript Essentials", file: "/certifications/fe/tsc_essentials.png" },
-        { name: "React using TypeScript", file: "/certifications/fe/react_using_typescript.png" }
+        { name: "Spring Cloud", file: "/certifications/spring/spring-cloud.png" }
       ]
     },
     {
@@ -27,9 +26,10 @@ export default function Home() {
       ]
     },
     {
-      category: "Spring Framework",
+      category: "Frontend Development",
       certificates: [
-        { name: "Spring Cloud", file: "/certifications/spring/spring-cloud.png" }
+        { name: "TypeScript Essentials", file: "/certifications/fe/tsc_essentials.png" },
+        { name: "React using TypeScript", file: "/certifications/fe/react_using_typescript.png" }
       ]
     }
   ];
