@@ -1,4 +1,3 @@
-import ProjectCard from "../components/ProjectCard";
 import { useState } from "react";
 
 export default function Home() {
