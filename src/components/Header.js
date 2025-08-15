@@ -1,11 +1,19 @@
 export default function Header() {
     return (
       <header className="header">
-        <h1>Sevanand CV</h1>
-        <nav>
-          <a href="#projects">Projects</a>
-          <a href="#contact">Contact</a>
-        </nav>
+        <div className="header-content">
+          <img src="/self.png" alt="Sevanand Yadav" className="profile-image" />
+          <h1>Sevanand Yadav</h1>
+          <p className="tagline">Staff Software Engineer</p>
+          <nav>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#experience">Experience</a>
+            <a href="#certifications">Certifications</a>
+            <a href="#education">Education</a>
+            <a href="#contact">Contact</a>
+          </nav>
+        </div>
       </header>
     );
   }
