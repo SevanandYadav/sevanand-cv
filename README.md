@@ -1,18 +1,26 @@
-# Getting Started with Create React App
+# Sevanand CV - Portfolio Website
 
-URL - https://sevanandyadav.github.io/sevanand-cv/
+## Live URLs
+- **Netlify**: https://sevanandyadav.netlify.app/
+- **GitHub Pages**: https://sevanandyadav.github.io/sevanand-cv/
 
-## Steps To Setup AND DEPLOY
-# local 
-    npm start
+## Local Development
+```bash
+npm start
+```
 
-# to deploy on githib pages 
-Commit and push to GitHub:
-    git add .
-    git commit -m "Updated content"
-    git push origin main
+## Deployment
 
-Rebuild the production bundle:
-    npm run build   
-Push the new build folder to gh-pages branch:
-    git subtree push --prefix build origin gh-pages
+### Netlify (Recommended)
+Auto-deploys on push to main branch. No additional configuration needed.
+
+### GitHub Pages
+1. Add homepage field to package.json:
+   ```json
+   "homepage": "https://SevanandYadav.github.io/sevanand-cv"
+   ```
+2. Build and deploy:
+   ```bash
+   npm run build
+   git subtree push --prefix build origin gh-pages
+   ```
