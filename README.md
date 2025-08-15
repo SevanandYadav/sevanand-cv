@@ -11,16 +11,17 @@ npm start
 
 ## Deployment
 
-### Netlify (Recommended)
-Auto-deploys on push to main branch. No additional configuration needed.
+### Automated Deployment
+- **GitHub Pages**: Auto-deploys on push to main/master branch via GitHub Actions
+- **Netlify**: Auto-deploys when changes are merged to main/master branch
 
-### GitHub Pages
-1. Add homepage field to package.json:
-   ```json
-   "homepage": "https://SevanandYadav.github.io/sevanand-cv"
-   ```
-2. Build and deploy:
-   ```bash
-   npm run build
-   git subtree push --prefix build origin gh-pages
-   ```
+### Manual Deployment (if needed)
+```bash
+npm run build
+npm run deploy
+```
+
+### Workflow
+1. Push changes to main/master branch
+2. GitHub Actions automatically builds and deploys to GitHub Pages
+3. Netlify automatically detects the push and deploys to production
