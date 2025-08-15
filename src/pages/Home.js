@@ -112,15 +112,6 @@ export default function Home() {
         <h2>Skills</h2>
         <div className="skills-grid">
           <div className="skill-category">
-            <h3>Frontend</h3>
-            <div className="skills-list">
-              <span className="skill-tag">React</span>
-              <span className="skill-tag">JavaScript</span>
-              <span className="skill-tag">HTML/CSS</span>
-              <span className="skill-tag">TypeScript</span>
-            </div>
-          </div>
-          <div className="skill-category">
             <h3>Backend (Primary)</h3>
             <div className="skills-list">
               <span className="skill-tag">Java</span>
@@ -139,6 +130,15 @@ export default function Home() {
               <span className="skill-tag">AWS</span>
               <span className="skill-tag">Jenkins</span>
               <span className="skill-tag">REST APIs</span>
+            </div>
+          </div>
+          <div className="skill-category">
+            <h3>Frontend</h3>
+            <div className="skills-list">
+              <span className="skill-tag">React</span>
+              <span className="skill-tag">JavaScript</span>
+              <span className="skill-tag">HTML/CSS</span>
+              <span className="skill-tag">TypeScript</span>
             </div>
           </div>
         </div>
@@ -274,6 +274,14 @@ export default function Home() {
           </div>
         </div>
       </section>
+      
+      <button 
+        className="go-to-top-btn" 
+        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+        title="Go to top"
+      >
+        ↑
+      </button>
     </main>
   );
 }
