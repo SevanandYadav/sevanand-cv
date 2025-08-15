@@ -5,16 +5,18 @@ export default function Home() {
     <main>
       <section id="projects">
         <h2>Projects</h2>
-        <ProjectCard
-          title="Portfolio"
-          description="A React-based portfolio hosted on GitHub Pages."
-          link="https://github.com/SevanandYadav/sevanand-cv"
-        />
+        <div className="projects-grid">
+          <ProjectCard
+            title="Portfolio Website"
+            description="A modern, responsive React portfolio showcasing projects and skills, deployed on GitHub Pages."
+            link="https://github.com/SevanandYadav/sevanand-cv"
+          />
+        </div>
       </section>
 
       <section id="contact">
         <h2>Contact</h2>
-        <p>Email: your.email@example.com</p>
+        <p>Email: sevanandyadav@gmail.com</p>
       </section>
     </main>
   );
