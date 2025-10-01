@@ -99,10 +99,20 @@ export default function Home() {
           <div className="about-content">
             <p>I'm a passionate Staff Software Engineer with primary expertise in Java and backend systems. I have extensive experience building scalable enterprise applications using Java, Spring Boot, and microservices architecture. Additionally, I possess knowledge of frontend technologies including React and JavaScript, enabling me to contribute across the full technology stack when needed.</p>
             <div className="resume-download">
-              <a href="/resume.pdf" target="_blank" className="resume-download-btn">
+              <button 
+                className="resume-download-btn"
+                onClick={() => {
+                  const link = document.createElement('a');
+                  link.href = 'https://drive.google.com/uc?export=download&id=1WK7vm1v2giPnCifr9ex1AO5G3w8xTXeK';
+                  link.download = 'Sevanand_Yadav_Resume.pdf';
+                  document.body.appendChild(link);
+                  link.click();
+                  document.body.removeChild(link);
+                }}
+              >
                 <span className="download-icon">📄</span>
                 DOWNLOAD RESUME
-              </a>
+              </button>
             </div>
           </div>
         </div>
