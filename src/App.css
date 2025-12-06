@@ -222,6 +222,11 @@ section h2 {
   box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
 }
 
+.resume-download-btn:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.2);
+}
+
 .download-icon {
   font-size: 1.2rem;
 }
