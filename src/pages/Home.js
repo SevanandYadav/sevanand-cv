@@ -1,8 +1,16 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Home() {
   const [expandedExperience, setExpandedExperience] = useState(null);
   const [expandedCertification, setExpandedCertification] = useState(null);
+  const [content, setContent] = useState(null);
+
+  useEffect(() => {
+    fetch(`https://raw.githubusercontent.com/SevanandYadav/sevanand-cv/data/src/data/content.json?t=${Date.now()}`)
+      .then(response => response.json())
+      .then(data => setContent(data))
+      .catch(error => console.error('Error loading content:', error));
+  }, []);
 
   const toggleExperience = (index) => {
     setExpandedExperience(expandedExperience === index ? null : index);
@@ -12,92 +20,16 @@ export default function Home() {
     setExpandedCertification(expandedCertification === index ? null : index);
   };
 
-  const certifications = [
-    {
-      category: "Spring Framework",
-      certificates: [
-        { name: "Spring Cloud", file: "/certifications/spring/spring-cloud.png" }
-      ]
-    },
-    {
-      category: "Cloud Computing",
-      certificates: [
-        { name: "AWS Developer Associate", file: "/certifications/cloud/aws/aws_dev_associate.png" }
-      ]
-    },
-    {
-      category: "Frontend Development",
-      certificates: [
-        { name: "TypeScript Essentials", file: "/certifications/fe/tsc_essentials.png" },
-        { name: "React using TypeScript", file: "/certifications/fe/react_using_typescript.png" }
-      ]
-    }
-  ];
+  if (!content) return <div className="loading">Loading...</div>;
 
-  const experiences = [
-    {
-      company: "Altimetrik",
-      logo: "/companies/altinetrik.png",
-      position: "Staff Software Engineer",
-      duration: "06/2025 - Present",
-      achievements: [
-        "Leading backend development initiatives using Java and Spring Boot",
-        "Architecting microservices solutions and implementing event-driven systems with Kafka",
-        "Mentoring junior developers and driving technical excellence across teams"
-      ]
-    },
-    {
-      company: "Moniepoint",
-      logo: "/companies/moniepoint.png",
-      position: "Senior Software Engineer",
-      duration: "09/2024 - 05/2025",
-      achievements: [
-        "Developed scalable fintech solutions using Java and microservices architecture",
-        "Implemented high-performance payment processing systems",
-        "Worked on real-time transaction handling with Kafka messaging"
-      ]
-    },
-    {
-      company: "Paytm Payment Bank",
-      logo: "/companies/psytm.png",
-      position: "Senior Software Engineer",
-      duration: "04/2022 - 09/2024",
-      achievements: [
-        "Built robust backend services for payment gateway systems using Java and Spring Boot",
-        "Contributed to high-volume transaction processing",
-        "Implemented RESTful APIs for mobile and web applications"
-      ]
-    },
-    {
-      company: "Principle Global Services",
-      logo: "/companies/pgs.png",
-      position: "Software Developer",
-      duration: "05/2020 - 04/2022",
-      achievements: [
-        "Developed enterprise Java applications and worked on database optimization",
-        "Implemented business logic and integrated third-party services",
-        "Contributed to client projects with scalable solutions"
-      ]
-    },
-    {
-      company: "Cybage",
-      logo: "/companies/cyabage.png",
-      position: "Associate Software Engineer",
-      duration: "02/2018 - 04/2020",
-      achievements: [
-        "Started career developing Java-based applications",
-        "Learned enterprise software development practices",
-        "Gained experience in full software development lifecycle"
-      ]
-    }
-  ];
+  const { about, skills, experiences, certifications, education } = content;
   return (
     <main>
       <section id="about" className="about-section">
         <div className="about-card">
           <h2>About Me</h2>
           <div className="about-content">
-            <p>I'm a passionate Staff Software Engineer with primary expertise in Java and backend systems. I have extensive experience building scalable enterprise applications using Java, Spring Boot, and microservices architecture. Additionally, I possess knowledge of frontend technologies including React and JavaScript, enabling me to contribute across the full technology stack when needed.</p>
+            <p>{about.description}</p>
             <div className="resume-download">
               <button 
                 className="resume-download-btn"
@@ -121,36 +53,16 @@ export default function Home() {
       <section id="skills">
         <h2>Skills</h2>
         <div className="skills-grid">
-          <div className="skill-category">
-            <h3>Backend (Primary)</h3>
-            <div className="skills-list">
-              <span className="skill-tag">Java</span>
-              <span className="skill-tag">Spring Boot</span>
-              <span className="skill-tag">JPA</span>
-              <span className="skill-tag">Microservices</span>
-              <span className="skill-tag">Kafka</span>
-              <span className="skill-tag">MySQL</span>
+          {skills.map((skillCategory, index) => (
+            <div key={index} className="skill-category">
+              <h3>{skillCategory.category}</h3>
+              <div className="skills-list">
+                {skillCategory.items.map((skill, i) => (
+                  <span key={i} className="skill-tag">{skill}</span>
+                ))}
+              </div>
             </div>
-          </div>
-          <div className="skill-category">
-            <h3>Tools & Technologies</h3>
-            <div className="skills-list">
-              <span className="skill-tag">Git</span>
-              <span className="skill-tag">Docker</span>
-              <span className="skill-tag">AWS</span>
-              <span className="skill-tag">Jenkins</span>
-              <span className="skill-tag">REST APIs</span>
-            </div>
-          </div>
-          <div className="skill-category">
-            <h3>Frontend</h3>
-            <div className="skills-list">
-              <span className="skill-tag">React</span>
-              <span className="skill-tag">JavaScript</span>
-              <span className="skill-tag">HTML/CSS</span>
-              <span className="skill-tag">TypeScript</span>
-            </div>
-          </div>
+          ))}
         </div>
       </section>
 
@@ -218,20 +130,15 @@ export default function Home() {
         <div className="education-card">
           <h2>Education</h2>
           <div className="education-timeline">
-            <div className="education-item">
-              <div className="education-date">06/2017 - 02/2018</div>
-              <div className="education-content">
-                <h3>CDAC ACTS, Pune</h3>
-                <h4>PG-DAC</h4>
+            {education.map((edu, index) => (
+              <div key={index} className="education-item">
+                <div className="education-date">{edu.duration}</div>
+                <div className="education-content">
+                  <h3>{edu.institution}</h3>
+                  <h4>{edu.degree}</h4>
+                </div>
               </div>
-            </div>
-            <div className="education-item">
-              <div className="education-date">06/2013 - 07/2017</div>
-              <div className="education-content">
-                <h3>UIET, Kanpur</h3>
-                <h4>B.Tech (IT)</h4>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
