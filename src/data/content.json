@@ -18,6 +18,17 @@
   ],
   "experiences": [
     {
+      "company": "Google",
+      "logo": "/companies/altinetrik.png",
+      "position": "Staff Software Engineer",
+      "duration": "06/2025 - Present",
+      "achievements": [
+        "Leading backend development initiatives using Java and Spring Boot",
+        "Architecting microservices solutions and implementing event-driven systems with Kafka",
+        "Mentoring junior developers and driving technical excellence across teams"
+      ]
+    },
+    {
       "company": "Altimetrik",
       "logo": "/companies/altinetrik.png",
       "position": "Staff Software Engineer",
