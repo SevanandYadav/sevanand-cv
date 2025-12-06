@@ -149,7 +149,7 @@ export default function Home() {
           <p>I'm always open to discussing new opportunities and interesting projects.</p>
           
           <div className="contact-form">
-            <form name="contact" method="POST" data-netlify="true" onSubmit={(e) => {
+            <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" onSubmit={(e) => {
               e.preventDefault();
               const formData = new FormData(e.target);
               
@@ -167,6 +167,7 @@ export default function Home() {
               });
             }}>
               <input type="hidden" name="form-name" value="contact" />
+              <input type="hidden" name="bot-field" />
               <div className="form-row">
                 <input type="text" name="name" placeholder="Your Name" required />
                 <input type="email" name="email" placeholder="Your Email" required />
