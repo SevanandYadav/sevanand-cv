@@ -15,10 +15,9 @@ npm start
 - **GitHub Pages**: Auto-deploys on push to main/master branch via GitHub Actions
 - **Netlify**: Auto-deploys when changes are merged to main/master branch
 
-### Manual Deployment (if needed)
+### setup dependencies (if needed)
 ```bash
-npm run build
-npm run deploy
+npm install
 ```
 
 ### Workflow
