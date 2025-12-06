@@ -2,7 +2,7 @@ export default function Header() {
     return (
       <header className="header">
         <div className="header-content">
-          <img src="/self.png" alt="Sevanand Yadav" className="profile-image" />
+          <img src="https://raw.githubusercontent.com/SevanandYadav/sevanand-cv/data/public/self.png" alt="Sevanand Yadav" className="profile-image" />
           <h1>Sevanand Yadav</h1>
           <p className="tagline">Staff Software Engineer</p>
           <nav>
