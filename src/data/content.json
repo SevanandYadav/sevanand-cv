@@ -19,7 +19,7 @@
   "experiences": [
     {
       "company": "Altimetrik",
-      "logo": "/companies/altinetrik.png",
+      "logo": "https://raw.githubusercontent.com/SevanandYadav/sevanand-cv/data/public/companies/altinetrik.png",
       "position": "Staff Software Engineer",
       "duration": "06/2025 - Present",
       "achievements": [
@@ -30,7 +30,7 @@
     },
     {
       "company": "Moniepoint",
-      "logo": "/companies/moniepoint.png",
+      "logo": "https://raw.githubusercontent.com/SevanandYadav/sevanand-cv/data/public/companies/moniepoint.png",
       "position": "Senior Software Engineer",
       "duration": "09/2024 - 05/2025",
       "achievements": [
@@ -41,7 +41,7 @@
     },
     {
       "company": "Paytm Payment Bank",
-      "logo": "/companies/psytm.png",
+      "logo": "https://raw.githubusercontent.com/SevanandYadav/sevanand-cv/data/public/companies/psytm.png",
       "position": "Senior Software Engineer",
       "duration": "04/2022 - 09/2024",
       "achievements": [
@@ -52,7 +52,7 @@
     },
     {
       "company": "Principle Global Services",
-      "logo": "/companies/pgs.png",
+      "logo": "https://raw.githubusercontent.com/SevanandYadav/sevanand-cv/data/public/companies/pgs.png",
       "position": "Software Developer",
       "duration": "05/2020 - 04/2022",
       "achievements": [
@@ -63,7 +63,7 @@
     },
     {
       "company": "Cybage",
-      "logo": "/companies/cyabage.png",
+      "logo": "https://raw.githubusercontent.com/SevanandYadav/sevanand-cv/data/public/companies/cyabage.png",
       "position": "Associate Software Engineer",
       "duration": "02/2018 - 04/2020",
       "achievements": [
@@ -77,21 +77,21 @@
     {
       "category": "Spring Framework",
       "certificates": [
-        { "name": "Spring Cloud", "file": "/certifications/spring/spring-cloud.png" }
+        { "name": "Spring Cloud", "file": "https://raw.githubusercontent.com/SevanandYadav/sevanand-cv/data/public/certifications/spring/spring-cloud.png" }
       ]
     },
     {
       "category": "Cloud",
       "certificates": [
-        { "name": "AWS Certified Developer - Associate", "file": "/certifications/cloud/aws/aws_dev_associate.png" },
-        { "name": "AWS Certified Machine Learning Engineer - Associate", "file": "/certifications/cloud/aws/aws_dev_associate.png" }
+        { "name": "AWS Certified Developer - Associate", "file": "https://raw.githubusercontent.com/SevanandYadav/sevanand-cv/data/public/certifications/cloud/aws/aws_dev_associate.png" },
+        { "name": "AWS Certified Machine Learning Engineer - Associate", "file": "https://raw.githubusercontent.com/SevanandYadav/sevanand-cv/data/public/certifications/cloud/aws/aws_dev_associate.png" }
       ]
     },
     {
       "category": "Frontend Development",
       "certificates": [
-        { "name": "TypeScript Essentials", "file": "/certifications/fe/tsc_essentials.png" },
-        { "name": "React using TypeScript", "file": "/certifications/fe/react_using_typescript.png" }
+        { "name": "TypeScript Essentials", "file": "https://raw.githubusercontent.com/SevanandYadav/sevanand-cv/data/public/certifications/fe/tsc_essentials.png" },
+        { "name": "React using TypeScript", "file": "https://raw.githubusercontent.com/SevanandYadav/sevanand-cv/data/public/certifications/fe/react_using_typescript.png" }
       ]
     }
   ],
