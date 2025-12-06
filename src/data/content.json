@@ -5,7 +5,7 @@
   "skills": [
     {
       "category": "Backend (Primary)",
-      "items": ["Java", "Spring Boot", "JPA", "Microservices", "Kafka", "MySQL"]
+      "items": ["Java", "Spring Boot", "JPA", "Microservices", "Kafka", "MySQL", "Machine Learning"]
     },
     {
       "category": "Tools & Technologies",
@@ -81,9 +81,10 @@
       ]
     },
     {
-      "category": "Cloud Computing",
+      "category": "Cloud",
       "certificates": [
-        { "name": "AWS Developer Associate", "file": "/certifications/cloud/aws/aws_dev_associate.png" }
+        { "name": "AWS Certified Developer - Associate", "file": "/certifications/cloud/aws/aws_dev_associate.png" },
+        { "name": "AWS Certified Machine Learning Engineer - Associate", "file": "/certifications/cloud/aws/aws_dev_associate.png" }
       ]
     },
     {
