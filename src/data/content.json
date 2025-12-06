@@ -1,0 +1,109 @@
+{
+  "about": {
+    "description": "I'm a passionate Staff Software Engineer with primary expertise in Java and backend systems. I have extensive experience building scalable enterprise applications using Java, Spring Boot, and microservices architecture. Additionally, I possess knowledge of frontend technologies including React and JavaScript, enabling me to contribute across the full technology stack when needed."
+  },
+  "skills": [
+    {
+      "category": "Backend (Primary)",
+      "items": ["Java", "Spring Boot", "JPA", "Microservices", "Kafka", "MySQL"]
+    },
+    {
+      "category": "Tools & Technologies",
+      "items": ["Git", "Docker", "AWS", "Jenkins", "REST APIs"]
+    },
+    {
+      "category": "Frontend",
+      "items": ["React", "JavaScript", "HTML/CSS", "TypeScript"]
+    }
+  ],
+  "experiences": [
+    {
+      "company": "Altimetrik",
+      "logo": "/companies/altinetrik.png",
+      "position": "Staff Software Engineer",
+      "duration": "06/2025 - Present",
+      "achievements": [
+        "Leading backend development initiatives using Java and Spring Boot",
+        "Architecting microservices solutions and implementing event-driven systems with Kafka",
+        "Mentoring junior developers and driving technical excellence across teams"
+      ]
+    },
+    {
+      "company": "Moniepoint",
+      "logo": "/companies/moniepoint.png",
+      "position": "Senior Software Engineer",
+      "duration": "09/2024 - 05/2025",
+      "achievements": [
+        "Developed scalable fintech solutions using Java and microservices architecture",
+        "Implemented high-performance payment processing systems",
+        "Worked on real-time transaction handling with Kafka messaging"
+      ]
+    },
+    {
+      "company": "Paytm Payment Bank",
+      "logo": "/companies/psytm.png",
+      "position": "Senior Software Engineer",
+      "duration": "04/2022 - 09/2024",
+      "achievements": [
+        "Built robust backend services for payment gateway systems using Java and Spring Boot",
+        "Contributed to high-volume transaction processing",
+        "Implemented RESTful APIs for mobile and web applications"
+      ]
+    },
+    {
+      "company": "Principle Global Services",
+      "logo": "/companies/pgs.png",
+      "position": "Software Developer",
+      "duration": "05/2020 - 04/2022",
+      "achievements": [
+        "Developed enterprise Java applications and worked on database optimization",
+        "Implemented business logic and integrated third-party services",
+        "Contributed to client projects with scalable solutions"
+      ]
+    },
+    {
+      "company": "Cybage",
+      "logo": "/companies/cyabage.png",
+      "position": "Associate Software Engineer",
+      "duration": "02/2018 - 04/2020",
+      "achievements": [
+        "Started career developing Java-based applications",
+        "Learned enterprise software development practices",
+        "Gained experience in full software development lifecycle"
+      ]
+    }
+  ],
+  "certifications": [
+    {
+      "category": "Spring Framework",
+      "certificates": [
+        { "name": "Spring Cloud", "file": "/certifications/spring/spring-cloud.png" }
+      ]
+    },
+    {
+      "category": "Cloud Computing",
+      "certificates": [
+        { "name": "AWS Developer Associate", "file": "/certifications/cloud/aws/aws_dev_associate.png" }
+      ]
+    },
+    {
+      "category": "Frontend Development",
+      "certificates": [
+        { "name": "TypeScript Essentials", "file": "/certifications/fe/tsc_essentials.png" },
+        { "name": "React using TypeScript", "file": "/certifications/fe/react_using_typescript.png" }
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "CDAC ACTS, Pune",
+      "degree": "PG-DAC",
+      "duration": "06/2017 - 02/2018"
+    },
+    {
+      "institution": "UIET, Kanpur",
+      "degree": "B.Tech (IT)",
+      "duration": "06/2013 - 07/2017"
+    }
+  ]
+}
