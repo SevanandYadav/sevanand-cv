@@ -4,6 +4,7 @@ export default function Home() {
   const [expandedExperience, setExpandedExperience] = useState(null);
   const [expandedCertification, setExpandedCertification] = useState(null);
   const [content, setContent] = useState(null);
+  const [formStatus, setFormStatus] = useState('');
 
   useEffect(() => {
     fetch(`https://raw.githubusercontent.com/SevanandYadav/sevanand-cv/data/src/data/content.json?t=${Date.now()}`)
@@ -149,25 +150,50 @@ export default function Home() {
           <p>I'm always open to discussing new opportunities and interesting projects.</p>
           
           <div className="contact-form">
-            <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" onSubmit={(e) => {
+            {formStatus && <div className="form-status">{formStatus}</div>}
+            <form onSubmit={async (e) => {
               e.preventDefault();
-              const formData = new FormData(e.target);
               
-              fetch('/', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                body: new URLSearchParams(formData).toString()
-              })
-              .then(() => {
-                alert('Message sent successfully!');
-                e.target.reset();
-              })
-              .catch(() => {
-                alert('Failed to send message. Please try emailing directly at sevanandyadav@gmail.com');
-              });
+              const form = e.target;
+              const name = form.name.value.trim();
+              const email = form.email.value.trim();
+              const subject = form.subject.value.trim();
+              const message = form.message.value.trim();
+              
+              if (!name || !email || !subject || !message) {
+                setFormStatus('Please fill in all fields');
+                return;
+              }
+              
+              setFormStatus('Sending...');
+              
+              try {
+                const response = await fetch('/.netlify/functions/send-email', {
+                  method: 'POST',
+                  headers: { 'Content-Type': 'application/json' },
+                  body: JSON.stringify({
+                    name,
+                    email,
+                    subject,
+                    message,
+                    to: 'info@seekio.in'
+                  })
+                });
+                
+                const data = await response.json();
+                
+                if (response.ok) {
+                  setFormStatus('Message sent successfully');
+                  form.reset();
+                  setTimeout(() => setFormStatus(''), 3000);
+                } else {
+                  throw new Error(data.message || 'Failed to send');
+                }
+              } catch (error) {
+                setFormStatus('Failed to send message. Please try emailing directly at sevanandyadav@gmail.com');
+                setTimeout(() => setFormStatus(''), 5000);
+              }
             }}>
-              <input type="hidden" name="form-name" value="contact" />
-              <input type="hidden" name="bot-field" />
               <div className="form-row">
                 <input type="text" name="name" placeholder="Your Name" required />
                 <input type="email" name="email" placeholder="Your Email" required />

@@ -215,6 +215,8 @@ section h2 {
   font-size: 1rem;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+  border: none;
+  cursor: pointer;
 }
 
 .resume-download-btn:hover {
@@ -643,6 +645,17 @@ section h2 {
   border: 1px solid #e2e8f0;
 }
 
+.form-status {
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border-radius: 6px;
+  text-align: center;
+  font-weight: 500;
+  background: #e6f7ff;
+  color: #0066cc;
+  border: 1px solid #91d5ff;
+}
+
 .contact-form form {
   display: flex;
   flex-direction: column;
@@ -703,6 +716,12 @@ section h2 {
 
 .send-btn:hover {
   transform: translateY(-2px);
+}
+
+.send-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
 }
 
 .contact-links {
@@ -836,4 +855,3 @@ section h2 {
     font-size: 1rem;
   }
 }
-  
