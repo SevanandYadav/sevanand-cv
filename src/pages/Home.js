@@ -190,7 +190,7 @@ export default function Home() {
                   throw new Error(data.message || 'Failed to send');
                 }
               } catch (error) {
-                setFormStatus('Failed to send message. Please try emailing directly at sevanandyadav@gmail.com');
+                setFormStatus('Failed to send message. Please try emailing directly at info@seekio.in');
                 setTimeout(() => setFormStatus(''), 5000);
               }
             }}>
