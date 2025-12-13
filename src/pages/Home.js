@@ -5,7 +5,7 @@ export default function Home() {
   const [expandedCertification, setExpandedCertification] = useState(null);
   const [content, setContent] = useState(null);
   const [formStatus, setFormStatus] = useState('');
-  const [lastSubmitTime, setLastSubmitTime] = useState({});
+
 
   useEffect(() => {
     fetch(`https://raw.githubusercontent.com/SevanandYadav/sevanand-cv/data/src/data/content.json?t=${Date.now()}`)
@@ -170,7 +170,7 @@ export default function Home() {
               // Rate limiting check per email
               const now = Date.now();
               const emailKey = `lastSubmit_${email}`;
-              const lastSubmitForEmail = localStorage.getItem(emailKey);
+              const lastSubmitForEmail = sessionStorage.getItem(emailKey);
               
               if (lastSubmitForEmail && now - parseInt(lastSubmitForEmail) < RATE_LIMIT_MS) {
                 const remainingTime = Math.ceil((RATE_LIMIT_MS - (now - parseInt(lastSubmitForEmail))) / 1000);
@@ -198,7 +198,7 @@ export default function Home() {
                 
                 if (response.ok) {
                   setFormStatus('Message sent successfully');
-                  localStorage.setItem(emailKey, now.toString());
+                  sessionStorage.setItem(emailKey, now.toString());
                   form.reset();
                   setTimeout(() => setFormStatus(''), 3000);
                 } else {
