@@ -115,5 +115,8 @@
       "linkedin": "https://www.linkedin.com/in/sevanand-yadav/",
       "leetcode": "https://leetcode.com/u/Sevanand/"
     }
+  },
+  "project": {
+    "rateLimitMs": 60000
   }
 }
