@@ -205,17 +205,6 @@ export default function Home() {
             </form>
           </div>
 
-          {contact && (
-            <div className="contact-info">
-              {contact.email && (
-                <div className="contact-item">
-                  <span className="contact-icon">📧</span>
-                  <a href={`mailto:${contact.email}`}>Send me a message</a>
-                </div>
-              )}
-            </div>
-          )}
-
           <div className="contact-links">
             {contact?.social?.linkedin && (
               <a href={contact.social.linkedin} className="contact-link" title="LinkedIn">
