@@ -5,6 +5,7 @@ export default function Home() {
   const [expandedCertification, setExpandedCertification] = useState(null);
   const [content, setContent] = useState(null);
   const [formStatus, setFormStatus] = useState('');
+  const [lastSubmitTime, setLastSubmitTime] = useState(0);
 
   useEffect(() => {
     fetch(`https://raw.githubusercontent.com/SevanandYadav/sevanand-cv/data/src/data/content.json?t=${Date.now()}`)
@@ -23,7 +24,8 @@ export default function Home() {
 
   if (!content) return <div className="loading">Loading...</div>;
 
-  const { about, skills, experiences, certifications, education, contact } = content;
+  const { about, skills, experiences, certifications, education, contact, project } = content;
+  const RATE_LIMIT_MS = project?.rateLimitMs || 60000; // Default 1 minute
   return (
     <main>
       <section id="about" className="about-section">
@@ -165,6 +167,14 @@ export default function Home() {
                 return;
               }
               
+              // Rate limiting check
+              const now = Date.now();
+              if (now - lastSubmitTime < RATE_LIMIT_MS) {
+                const remainingTime = Math.ceil((RATE_LIMIT_MS - (now - lastSubmitTime)) / 1000);
+                setFormStatus(`Please wait ${remainingTime} seconds before sending another message`);
+                return;
+              }
+              
               setFormStatus('Sending...');
               
               try {
@@ -185,6 +195,7 @@ export default function Home() {
                 
                 if (response.ok) {
                   setFormStatus('Message sent successfully');
+                  setLastSubmitTime(now);
                   form.reset();
                   setTimeout(() => setFormStatus(''), 3000);
                 } else {
