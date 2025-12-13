@@ -1,10 +1,11 @@
-name: Deploy to GitHub Pages
+# GitHub Pages deployment disabled - using Netlify instead
+# name: Deploy to GitHub Pages
 
-on:
-  push:
-    branches: [ main, master ]
-  pull_request:
-    branches: [ main, master ]
+# on:
+#   push:
+#     branches: [ main, master ]
+#   pull_request:
+#     branches: [ main, master ]
 
 permissions:
   contents: read
