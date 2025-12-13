@@ -6,7 +6,7 @@ exports.handler = async (event) => {
   }
 
   try {
-    const { name, email, message, subject, to } = JSON.parse(event.body);
+    const { name, email, message, subject, to, from } = JSON.parse(event.body);
 
     const response = await fetch('https://api.resend.com/emails', {
       method: 'POST',
@@ -15,7 +15,7 @@ exports.handler = async (event) => {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        from: 'onboarding@resend.dev',
+        from: from || 'cv-portal@seekio.in',
         to: to,
         subject: subject || `New Contact Form Message from ${name}`,
         html: `

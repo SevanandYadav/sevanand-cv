@@ -176,7 +176,8 @@ export default function Home() {
                     email,
                     subject,
                     message,
-                    to: contact?.email || 'info@seekio.in'
+                    to: contact?.email || 'info@seekio.in',
+                    from: contact?.fromEmail || 'cv-portal@seekio.in'
                   })
                 });
                 
@@ -209,13 +210,7 @@ export default function Home() {
               {contact.email && (
                 <div className="contact-item">
                   <span className="contact-icon">📧</span>
-                  <a href={`mailto:${contact.email}`}>{contact.email}</a>
-                </div>
-              )}
-              {contact.phone && (
-                <div className="contact-item">
-                  <span className="contact-icon">📞</span>
-                  <a href={`tel:${contact.phone}`}>{contact.phone}</a>
+                  <a href={`mailto:${contact.email}`}>Send me a message</a>
                 </div>
               )}
             </div>
