@@ -106,5 +106,13 @@
       "degree": "B.Tech (IT)",
       "duration": "06/2013 - 07/2017"
     }
-  ]
+  ],
+   "contact": {
+    "email": "info@seekio.in",
+    "phone": "+1-234-567-8900",
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/sevanand-yadav/",
+      "leetcode": "https://leetcode.com/u/Sevanand/"
+    }
+  }
 }
