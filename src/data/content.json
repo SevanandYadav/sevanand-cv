@@ -84,7 +84,7 @@
       "category": "Cloud",
       "certificates": [
         { "name": "AWS Certified Developer - Associate", "file": "https://raw.githubusercontent.com/SevanandYadav/sevanand-cv/data/public/certifications/cloud/aws/aws_dev_associate.png" },
-        { "name": "AWS Certified Machine Learning Engineer - Associate", "file": "https://raw.githubusercontent.com/SevanandYadav/sevanand-cv/data/public/certifications/cloud/aws/aws_dev_associate.png" }
+        { "name": "AWS Certified Machine Learning Engineer - Associate", "file": "https://raw.githubusercontent.com/SevanandYadav/sevanand-cv/data/public/certifications/cloud/aws/MLC01.png" }
       ]
     },
     {
