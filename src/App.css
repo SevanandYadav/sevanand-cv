@@ -724,6 +724,38 @@ section h2 {
   transform: none;
 }
 
+.contact-info {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #f8fafc;
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  border: 1px solid #e2e8f0;
+}
+
+.contact-item a {
+  color: #667eea;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.contact-item a:hover {
+  color: #764ba2;
+}
+
+.contact-icon {
+  font-size: 1.2rem;
+}
+
 .contact-links {
   display: flex;
   gap: 1.5rem;
